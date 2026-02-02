@@ -17,7 +17,6 @@ This project was developed as part of the COMP2046 course assignments (HKBU, 202
   - `AFKPlayer` – always passes / plays first card
 - Full game flow: 4 rounds, hand management, painting ownership, end-of-round & end-of-game scoring
 - Modular design using packages (`players`, `paintings`, etc.)
-- Compatible with provided demo.jar behavior for reference
 
 ## Project Structure
 
@@ -27,10 +26,9 @@ src/
 ├── paintings/
 │   └── Painting.java           # Painting card + artist & value logic
 └── players/
-    ├── Player.java             # Abstract base player
-    ├── HumanPlayer.java        # (assumed) interactive player
+    ├── Player.java             # human player
     ├── ComputerPlayer.java     # Rational AI player
-    └── AFKPlayer.java          # Non-bidding / auto-play player
+    └── AFKPlayer.java          # Non-bidding player
 ```
 
 ## How to Run
@@ -50,7 +48,7 @@ This implementation follows the official **Modern Art** rules with the following
 - Scoring and tie-breaking as per the rulebook
 
 Full rules: [Modern Art Rulebook](./modern-art-rulebook.pdf)  
-Video tutorial: [English](https://www.youtube.com/watch?v=CrwHrstvA0k) | [English](https://www.youtube.com/watch?v=9PGt1krM7Ww)
+Video tutorial: [English](https://www.youtube.com/watch?v=CrwHrstvA0k) | [Chinese](https://www.youtube.com/watch?v=9PGt1krM7Ww)
 
 
 ## Learning Objectives Demonstrated
