@@ -13,7 +13,7 @@ This project was developed as part of the COMP2046 course assignments (HKBU, 202
   - One Offer Auction
 - **Player types**:
   - Human player – interactive bidding and card selection via console
-  - `ComputerPlayer` – rational AI that never bids above a painting's potential round-end value; bids conservatively (≤ half value) when already owning the painting
+  - `ComputerPlayer` – rational AI that never bids above a painting's potential round-end value
   - `AFKPlayer` – always bids 0 (forfeits) and plays the first available card
 - Full game flow: 4 rounds, hand management, painting ownership, end-of-round & end-of-game scoring
 - Modular design using packages (`players`, `paintings`, etc.)
@@ -69,7 +69,7 @@ Video tutorials:
 
 ## Academic Context & License
 
-Developed for **COMP2046** Programming Assignments (PA2 + PA3), Hong Kong Baptist University, 2024-25 Semester 1.  
+Developed for **COMP2046** Programming Assignments.  
 Assignment references:  
 - [PA2 GitHub](https://github.com/khwang0/COMP2046-2425PA2)  
 - [PA3 GitHub](https://github.com/khwang0/COMP2046-2425PA3)
