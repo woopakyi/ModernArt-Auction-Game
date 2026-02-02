@@ -1,82 +1,67 @@
-# COMP2046 PA3 – Modern Art Board Game (Java)
+# Modern Art – Java Implementation
 
-This repository contains my complete solution for **Programming Assignment 3** of the course **COMP2046** (2024-25 Semester 1) at Hong Kong Baptist University.
+A faithful Java implementation of **Modern Art**, the classic auction board game designed by Reiner Knizia.
 
-The task was to implement a console-based digital version of the classic board game **Modern Art** by Reiner Knizia, building on PA2 with new features.
+This project was developed as part of the COMP2046 course assignments (HKBU, 2024-25 Semester 1). It simulates core gameplay mechanics including multiple auction types and computer-controlled players.
 
-## Features Implemented
+## Features
 
-- **Game Core** (updated from PA2)
-  - Painting cards with five artists and four auction types
-  - Round-based gameplay with money management and scoring
-  - End-of-round and end-of-game winner determination
-
-- **Auction Types** (new in PA3)
+- **Auction types**:
   - Open Auction
   - Hidden Auction
   - Fixed Price Auction
-  - One Offer Auction  
-  *(Double Auction not required)*
-
-- **Player Types** (new in PA3)
-  - `HumanPlayer` – interactive input via console
-  - `ComputerPlayer` – rational bidder:
-    - Never bids more than the painting’s potential max value
-    - Bids ≤ half potential value if already owns the painting
-  - `AFKPlayer` – always bids 0, plays the first card when required
-
-- **Object-Oriented Design**
-  - Inheritance & polymorphism (Player hierarchy)
-  - Abstract base classes
-  - Encapsulated game logic in `ModernArt` class
-  - Use of constants and clean package structure (`paintings`, `players`)
-
-## Important Notes
-
-- This is **coursework** submitted for grading.
-- As per assignment rules: **No generative AI tools** were used during development.
-- The program follows the behavior of the provided `demo.jar` as closely as possible.
-- Output format and messages may differ slightly but preserve all required functionality.
-
-## How to Run
-
-```bash
-# Compile (assuming you're in the project root)
-javac *.java players/*.java paintings/*.java
-
-# Run with 2 players (default)
-java ModernArt
-
-# Run with 4 players (e.g.)
-java ModernArt 4
-```
-
-Or use the provided JAR (if you built one):
-
-```bash
-java -jar modern-art-pa3.jar 4
-```
+  - One Offer Auction
+- **Player types**:
+  - Human player (interactive input)
+  - `ComputerPlayer` – rational bidding (never overbids potential value, protective bidding when owning the painting)
+  - `AFKPlayer` – always passes / plays first card
+- Full game flow: 4 rounds, hand management, painting ownership, end-of-round & end-of-game scoring
+- Modular design using packages (`players`, `paintings`, etc.)
+- Compatible with provided demo.jar behavior for reference
 
 ## Project Structure
 
 ```
-├── ModernArt.java          # Main game logic & loop
-├── players/
-│   ├── Player.java         # Abstract base class
-│   ├── HumanPlayer.java
-│   ├── ComputerPlayer.java
-│   └── AFKPlayer.java
+src/
+├── ModernArt.java              # Main game logic and loop
 ├── paintings/
-│   ├── Painting.java       # Abstract painting
-│   ├── LiteralPainting.java
-│   ├── ColorfulPainting.java
-│   ├── PortraitPainting.java
-│   └── (other painting types...)
-└── README.md
+│   └── Painting.java           # Painting card + artist & value logic
+└── players/
+    ├── Player.java             # Abstract base player
+    ├── HumanPlayer.java        # (assumed) interactive player
+    ├── ComputerPlayer.java     # Rational AI player
+    └── AFKPlayer.java          # Non-bidding / auto-play player
 ```
 
+## How to Run
+
+1. Clone the src of the project.
+
+2. Build a project in IntelliJ IDEA with the scr.
+
+3. Run  `ModernArt.java`.
+
+Follow console prompts to play as human. Computer and AFK players act automatically.
+
+## Rules Reference
+
+This implementation follows the official **Modern Art** rules with the following simplifications/adaptations made in the assignment:
+- Only the four auction types listed above (no double auction)
+- Scoring and tie-breaking as per the rulebook
+
+Full rules: [Modern Art Rulebook](./modern-art-rulebook.pdf)  
+Video tutorial: [English](https://www.youtube.com/watch?v=CrwHrstvA0k) | [English](https://www.youtube.com/watch?v=9PGt1krM7Ww)
+
+
+## Learning Objectives Demonstrated
+
+- Object-oriented programming (inheritance, polymorphism, abstract classes)
+- Packages and proper class organization
+- ArrayList / collections usage
+- Game loop, state management, and input validation
+- Basic AI decision-making logic
 
 ## License
-Built as part of COMP2046 coursework – for educational purposes only.
 
-Coursewoek designed by: Dr. Kevin Wang: kevinw@comp.hkbu.edu.hk
+This project was created for COMP2045 / COMP2046 in academic purposes.  
+Assignment Website: [PA2](https://github.com/khwang0/COMP2046-2425PA2) | [PA3](https://github.com/khwang0/COMP2046-2425PA3) 
