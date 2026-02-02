@@ -54,6 +54,7 @@ This implementation follows the official **Modern Art** rules with the following
 - Scoring and tie-breaking as per the rulebook
 
 Full official rules: [Modern Art Rulebook](./modern-art-rulebook.pdf)
+
 Video tutorials:  
 - [English](https://www.youtube.com/watch?v=CrwHrstvA0k)  
 - [Putonghua](https://www.youtube.com/watch?v=9PGt1krM7Ww)
